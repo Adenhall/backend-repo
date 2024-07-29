@@ -1,16 +1,9 @@
-import { Router } from 'express';
-import { FirestoreService } from '../services/firestore';
+import { Router } from "express";
 
-const router = Router();
-const firestoreService = new FirestoreService();
+import { usersControllers } from "../controllers";
 
-router.get('/data', async (req, res) => {
-  try {
-    const data = await firestoreService.getCollectionData('users');
-    res.send(data);
-  } catch (error) {
-    res.status(500).send('Error retrieving data');
-  }
-});
+const usersRouter = Router();
 
-export default router;
+usersRouter.get("/", usersControllers.listUsers);
+
+export default usersRouter;
