@@ -2,11 +2,11 @@
   "name": "backend-repo",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/index.js",
-    "dev": "nodemon src/index.ts",
+    "start": "npm run build && node dist/app.js",
+    "dev": "nodemon core/app.ts",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],
